@@ -1,0 +1,8 @@
+imports:
+#  - Request/services.yaml
+  - Response/services.yaml
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true

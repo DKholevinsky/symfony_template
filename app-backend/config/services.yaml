@@ -1,0 +1,14 @@
+parameters:
+
+imports:
+    - '../src/Controller/services.yaml'
+    - '../src/Room/services.yaml'
+    - '../src/City/services.yaml'
+    - '../src/Infrastructure/services.yaml'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Symfony\Component\Serializer\Normalizer\ObjectNormalizer: ~

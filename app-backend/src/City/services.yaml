@@ -1,0 +1,4 @@
+services:
+
+  App\City\CityReferenceResolver:
+    tags: ['resource_provider']

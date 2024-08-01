@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  backend:
+    env_file: .env
+    build: app-backend
+    volumes:
+      - ./app-backend:/var/www/app:cached
+      - .env:/var/www/app/.env:cached
+
+  backend-nginx:
+    build: app-backend/config/nginx
+    ports:
+      - "8100:80"
+    links:
+      - backend
+
+volumes:
+  pg_data_volume_sales_hub:
+    name: pg_data_volume_sales_hub

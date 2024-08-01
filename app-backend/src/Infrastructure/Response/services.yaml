@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Infrastructure\Response\ResponseNormalizeListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.view, method: onKernelView }
+
+    App\Infrastructure\Response\ResourceReference\PromiseCollection: ~
+    App\Infrastructure\Response\ResourceReference\ResponseComposer:
+        public: true
+    App\Infrastructure\Response\ResourceReference\ResourceNormalizer: ~
+#    Infrastructure\Response\Normalizer\TranslatableEnumNormalizer: ~
+#    Infrastructure\Response\Normalizer\DateTimeNormalizer: ~
+#    Infrastructure\Response\Normalizer\IdentifierNormalizer: ~
